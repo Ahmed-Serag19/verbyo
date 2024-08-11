@@ -70,7 +70,7 @@
 .right-side-wycd {
   height: 100%;
 }
-.video-bg {
+.gif-bg {
   background: url('../src/assets/phone-bg.png');
   background-size: contain;
   background-repeat: no-repeat;
@@ -85,7 +85,7 @@
   border-radius: 50px;
 }
 
-.video-container img {
+.gif-container img {
   width: 300px;
   height: 600px;
   margin: auto;

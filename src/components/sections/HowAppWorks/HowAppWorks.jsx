@@ -34,7 +34,7 @@ const HowAppWorks = ({ openModal }) => {
                   : 'bg-white hover:bg-blue-50'
               }`}
             >
-              <h2 className="text-2xl font-bold ">
+              <h2 className="text-xl font-bold ">
                 Choose what to post
               </h2>
               <p>
@@ -50,7 +50,7 @@ const HowAppWorks = ({ openModal }) => {
                   : 'bg-white hover:bg-blue-50'
               }`}
             >
-              <h2 className="text-2xl font-bold">
+              <h2 className="text-xl font-bold">
                 Create a post on your social media account
               </h2>
               <p>
@@ -66,7 +66,7 @@ const HowAppWorks = ({ openModal }) => {
                   : 'bg-white hover:bg-blue-50'
               }`}
             >
-              <h2 className="text-2xl font-bold">
+              <h2 className="text-xl font-bold">
                 Verify the post with us and get rewarded
               </h2>
               <p>
@@ -82,12 +82,15 @@ const HowAppWorks = ({ openModal }) => {
             data-aos-duration="1000"
           >
             <div className="haw-video-container relative p-10">
-              <div className="video-bg">
-                <div className="video-container  ">
+              <div className="gif-bg">
+                <div className="gif-container">
                   <img src={Gif} alt="" className="rounded-3xl" />
                 </div>
                 <div className="absolute top-6">
-                  <img src={MobileTop} alt="" />
+                  <img
+                    src={MobileTop}
+                    alt="gif about the application and how it works"
+                  />
                 </div>
               </div>
             </div>

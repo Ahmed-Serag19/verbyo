@@ -34,35 +34,35 @@ const Brands = () => {
                 <img
                   src={Isco}
                   alt="isco logo"
-                  className="w-auto h-24"
+                  className="w-auto h-16"
                 />
               </SwiperSlide>
               <SwiperSlide className="flex justify-center items-center">
                 <img
                   src={Addidas}
                   alt="addidas logo"
-                  className="w-auto h-24"
+                  className="w-auto h-16"
                 />
               </SwiperSlide>
               <SwiperSlide className="flex justify-center items-center">
                 <img
                   src={Unicef}
                   alt="unicef logo"
-                  className="w-auto h-24"
+                  className="w-auto h-16"
                 />
               </SwiperSlide>
               <SwiperSlide className="flex justify-center items-center">
                 <img
                   src={UnderArmour}
                   alt="under armour logo"
-                  className="w-auto h-24"
+                  className="w-auto h-16"
                 />
               </SwiperSlide>
               <SwiperSlide className="flex justify-center items-center">
                 <img
                   src={Lyft}
                   alt="lyft logo"
-                  className="w-auto h-24"
+                  className="w-auto h-16"
                 />
               </SwiperSlide>
             </Swiper>
@@ -71,27 +71,27 @@ const Brands = () => {
               <img
                 src={Isco}
                 alt="isco logo"
-                className="w-auto h-24"
+                className="w-auto h-16"
               />
               <img
                 src={Addidas}
                 alt="addidas logo"
-                className="w-auto h-24"
+                className="w-auto h-16"
               />
               <img
                 src={Unicef}
                 alt="unicef logo"
-                className="w-auto h-24"
+                className="w-auto h-16"
               />
               <img
                 src={UnderArmour}
                 alt="under armour logo"
-                className="w-auto h-24"
+                className="w-auto h-16"
               />
               <img
                 src={Lyft}
                 alt="lyft logo"
-                className="w-auto h-24"
+                className="w-auto h-16"
               />
             </div>
           )}

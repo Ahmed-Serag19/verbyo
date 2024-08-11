@@ -82,7 +82,7 @@ const WhatYouCanDo = () => {
                   : 'bg-white hover:bg-blue-50'
               }`}
             >
-              <h2 className="text-2xl font-bold ">
+              <h2 className="text-xl font-bold ">
                 Create a post on your social media account and get
                 rewarded.
               </h2>
@@ -101,7 +101,7 @@ const WhatYouCanDo = () => {
                   : 'bg-white hover:bg-blue-50'
               }`}
             >
-              <h2 className="text-2xl font-bold">
+              <h2 className="text-xl font-bold">
                 Create original content based on a script and share it
                 on your social media account.
               </h2>
