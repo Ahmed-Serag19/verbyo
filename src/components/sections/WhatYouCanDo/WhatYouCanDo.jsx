@@ -68,16 +68,18 @@ const WhatYouCanDo = () => {
 
   return (
     <section className="what-you-can-do w-full" ref={sectionRef}>
-      <div className="container py-32 m-auto bg-custom-bg rounded-lg">
-        <h1 className="text-5xl m-auto font-bold max-w-4xl text-center">
+      <div className="container py-20 m-auto bg-custom-bg rounded-lg">
+        <h1 className="text-4xl m-auto font-bold max-w-4xl text-center">
           What you can do with the fastest growing app
         </h1>
         <div className="wycd-container px-10 py-16 flex justify-around items-center">
           <div className="left-side-wycd flex flex-col gap-24 w-1/2">
             <div
               onClick={() => handleDivClick('div1')}
-              className={`transition duration-300 rounded-lg p-10 flex cursor-pointer flex-col gap-10 ${
-                activeDiv === 'div1' ? 'bg-blue-100' : 'bg-white'
+              className={`transition duration-300 rounded-lg p-5 flex cursor-pointer flex-col gap-5 ${
+                activeDiv === 'div1'
+                  ? 'bg-blue-100'
+                  : 'bg-white hover:bg-blue-50'
               }`}
             >
               <h2 className="text-2xl font-bold ">
@@ -93,8 +95,10 @@ const WhatYouCanDo = () => {
             </div>
             <div
               onClick={() => handleDivClick('div2')}
-              className={`transition duration-300 rounded-lg p-10 cursor-pointer flex flex-col gap-10 ${
-                activeDiv === 'div2' ? 'bg-blue-100' : 'bg-white'
+              className={`transition duration-300 rounded-lg p-5 cursor-pointer flex flex-col gap-5 ${
+                activeDiv === 'div2'
+                  ? 'bg-blue-100'
+                  : 'bg-white hover:bg-blue-50'
               }`}
             >
               <h2 className="text-2xl font-bold">
@@ -109,16 +113,19 @@ const WhatYouCanDo = () => {
             </div>
           </div>
           <div
-            className="right-side-wycd bg-white w-2/5 flex justify-center items-center rounded-xl"
+            className="right-side-wycd relative bg-white w-2/5 flex justify-center items-center rounded-xl"
             data-aos="fade"
             data-aos-duration="1000"
           >
             <div className="wycd-img-container p-10">
-              <img
-                src={image}
-                alt="mobile"
-                className="transition-opacity duration-1000" // Adding transition for opacity
-              />
+              <div className="">
+                {' '}
+                <img
+                  src={image}
+                  alt="mobile"
+                  className="transition-opacity duration-1000" // Adding transition for opacity
+                />
+              </div>
             </div>
           </div>
         </div>

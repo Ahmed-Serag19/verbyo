@@ -1,3 +1,4 @@
+import { useState } from 'react';
 import Navbar from './components/layout/Navbar/Navbar';
 import Hero from './components/sections/Hero/Hero';
 import Brands from './components/sections/Brands/Brands';
@@ -7,18 +8,30 @@ import { OSProvider } from './components/utils/OsContext';
 import HowAppWorks from './components/sections/HowAppWorks/HowAppWorks';
 import EveryDayUse from './components/sections/EveryDayUse/EveryDayUse';
 import QuestionsAccordion from './components/sections/QuestionsAccordion/QuestionsAccordion';
+import YoutubeModal from './components/utils/YoutubeModal';
 
 function App() {
+  const [isModalOpen, setModalOpen] = useState(false);
+
+  const openModal = () => {
+    setModalOpen(true);
+  };
+
+  const closeModal = () => {
+    setModalOpen(false);
+  };
+
   return (
     <OSProvider>
       <Navbar />
-      <Hero />
+      <Hero openModal={openModal} />
       <Brands />
       <WhatYouCanDo />
       <WhatToShare />
-      <HowAppWorks />
+      <HowAppWorks openModal={openModal} />
       <EveryDayUse />
       <QuestionsAccordion />
+      <YoutubeModal isOpen={isModalOpen} onClose={closeModal} />
     </OSProvider>
   );
 }

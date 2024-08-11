@@ -4,8 +4,8 @@ import PhoneHeroImg from '../../../assets/hero-phone-image.png';
 import playButton from '../../../assets/play-button.png';
 import AOS from 'aos';
 import { useOS } from '../../utils/OsContext';
-
-const Hero = () => {
+import PropTypes from 'prop-types';
+const Hero = ({ openModal }) => {
   const { handleDownloadClick } = useOS();
 
   useEffect(() => {
@@ -48,18 +48,16 @@ const Hero = () => {
             >
               Get the app
             </button>
-            <button className="btn-secondary flex justify-center items-center gap-2 bg-white  hover:bg-slate-100 transition duration-300 px-6 py-3 rounded-full border-black font-bold">
+            <button
+              onClick={openModal}
+              className="btn-secondary flex justify-center items-center gap-2 bg-white  hover:bg-slate-100 transition duration-300 px-6 py-3 rounded-full border-black font-bold"
+            >
               <img
                 src={playButton}
                 alt="Phone showing app interface"
                 className=""
               />
-              <a
-                href="https://www.youtube.com/watch?v=kE-M9kWmnpQ&t=1s"
-                className=""
-              >
-                Watch Intro
-              </a>
+              <span>Watch Intro</span>
             </button>
           </div>
         </div>
@@ -78,6 +76,10 @@ const Hero = () => {
       </div>
     </section>
   );
+};
+
+Hero.propTypes = {
+  openModal: PropTypes.func.isRequired,
 };
 
 export default Hero;

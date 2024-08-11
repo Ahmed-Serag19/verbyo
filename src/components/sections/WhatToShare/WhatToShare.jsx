@@ -4,8 +4,8 @@ import Posts from './Posts';
 const WhatToShare = () => {
   const { handleDownloadClick } = useOS();
   return (
-    <section className="what-to-share py-20">
-      <div className="container flex m-auto bg-custom-bg py-20 px-16 justify-center items-center">
+    <section className="what-to-share py-10">
+      <div className="container flex m-auto bg-custom-bg py-16 px-10 justify-center items-center">
         <div className="left-side-wts">
           <h1 className="text-3xl font-bold pb-10">
             What Content you share with Verbyo?
