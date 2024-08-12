@@ -40,7 +40,7 @@ const WhatYouCanDo = () => {
         const scrollY = window.scrollY;
         const sectionTop = sectionRef.current?.offsetTop || 0;
         const sectionHeight = sectionRef.current?.offsetHeight || 0;
-        const triggerPoint = sectionTop + sectionHeight / 2 - 100; // Adjust this value to trigger earlier
+        const triggerPoint = sectionTop + sectionHeight / 2 - 100;
 
         if (scrollY > triggerPoint) {
           setActiveDiv('div2');
@@ -51,10 +51,8 @@ const WhatYouCanDo = () => {
         }
       };
 
-      // Add scroll event listener
       window.addEventListener('scroll', handleScroll);
 
-      // Cleanup event listener on component unmount
       return () => {
         window.removeEventListener('scroll', handleScroll);
       };
@@ -67,13 +65,16 @@ const WhatYouCanDo = () => {
   };
 
   return (
-    <section className="what-you-can-do w-full" ref={sectionRef}>
-      <div className="container py-20 m-auto bg-custom-bg rounded-lg">
+    <section
+      className="what-you-can-do w-full py-10"
+      ref={sectionRef}
+    >
+      <div className="container pt-16 pb-3 m-auto bg-custom-bg rounded-lg">
         <h1 className="text-4xl m-auto font-bold max-w-4xl text-center">
           What you can do with the fastest growing app
         </h1>
         <div className="wycd-container px-10 py-16 flex justify-around items-center">
-          <div className="left-side-wycd flex flex-col gap-24 w-1/2">
+          <div className="left-side-wycd flex flex-col gap-12 w-1/2">
             <div
               onClick={() => handleDivClick('div1')}
               className={`transition duration-300 rounded-lg p-5 flex cursor-pointer flex-col gap-5 ${

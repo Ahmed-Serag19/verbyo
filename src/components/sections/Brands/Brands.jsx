@@ -15,13 +15,13 @@ const Brands = () => {
   return (
     <section className="brands text-center h-96 overflow-hidden w-full">
       <div className="flex flex-col justify-center items-center h-full gap-16">
-        <h1 className="text-lg">Trusted by brands & foundations</h1>
+        <h1 className="text-2xl">Trusted by brands & foundations</h1>
         <div className="brands-container w-screen">
           {isMobile ? (
             <Swiper
               modules={[Navigation, Pagination, Autoplay]}
-              spaceBetween={10}
-              slidesPerView={2}
+              spaceBetween={1}
+              slidesPerView={3}
               rewind={true}
               loop={true}
               autoplay={{
@@ -31,68 +31,44 @@ const Brands = () => {
               speed={500}
             >
               <SwiperSlide className="flex justify-center items-center">
-                <img
-                  src={Isco}
-                  alt="isco logo"
-                  className="w-auto h-16"
-                />
+                <img src={Isco} alt="isco logo" className="h-16" />
               </SwiperSlide>
               <SwiperSlide className="flex justify-center items-center">
                 <img
                   src={Addidas}
                   alt="addidas logo"
-                  className="w-auto h-16"
+                  className="h-16"
                 />
               </SwiperSlide>
               <SwiperSlide className="flex justify-center items-center">
                 <img
                   src={Unicef}
                   alt="unicef logo"
-                  className="w-auto h-16"
+                  className="h-16"
                 />
               </SwiperSlide>
               <SwiperSlide className="flex justify-center items-center">
                 <img
                   src={UnderArmour}
                   alt="under armour logo"
-                  className="w-auto h-16"
+                  className="h-16"
                 />
               </SwiperSlide>
               <SwiperSlide className="flex justify-center items-center">
-                <img
-                  src={Lyft}
-                  alt="lyft logo"
-                  className="w-auto h-16"
-                />
+                <img src={Lyft} alt="lyft logo" className="h-16" />
               </SwiperSlide>
             </Swiper>
           ) : (
-            <div className="flex space-x-4 justify-evenly items-center">
-              <img
-                src={Isco}
-                alt="isco logo"
-                className="w-auto h-16"
-              />
-              <img
-                src={Addidas}
-                alt="addidas logo"
-                className="w-auto h-16"
-              />
-              <img
-                src={Unicef}
-                alt="unicef logo"
-                className="w-auto h-16"
-              />
+            <div className="brands-container flex gap-20 justify-center items-center">
+              <img src={Isco} alt="isco logo" className="p-3" />
+              <img src={Addidas} alt="addidas logo" className="p-3" />
+              <img src={Unicef} alt="unicef logo" className="p-3" />
               <img
                 src={UnderArmour}
                 alt="under armour logo"
-                className="w-auto h-16"
+                className="p-3"
               />
-              <img
-                src={Lyft}
-                alt="lyft logo"
-                className="w-auto h-16"
-              />
+              <img src={Lyft} alt="lyft logo" className="p-3" />
             </div>
           )}
         </div>

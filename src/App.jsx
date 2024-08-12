@@ -9,6 +9,8 @@ import HowAppWorks from './components/sections/HowAppWorks/HowAppWorks';
 import EveryDayUse from './components/sections/EveryDayUse/EveryDayUse';
 import QuestionsAccordion from './components/sections/QuestionsAccordion/QuestionsAccordion';
 import YoutubeModal from './components/utils/YoutubeModal';
+import Campaigns from './components/sections/Campaigns/Campaigns';
+import Footer from './components/layout/Footer/Footer';
 
 function App() {
   const [isModalOpen, setModalOpen] = useState(false);
@@ -32,6 +34,8 @@ function App() {
       <EveryDayUse />
       <QuestionsAccordion />
       <YoutubeModal isOpen={isModalOpen} onClose={closeModal} />
+      <Campaigns />
+      <Footer />
     </OSProvider>
   );
 }

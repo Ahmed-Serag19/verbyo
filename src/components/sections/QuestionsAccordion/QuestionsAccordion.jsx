@@ -37,8 +37,8 @@ const QuestionsAccordion = () => {
   const handleOpen = (value) => setOpen(open === value ? 0 : value);
 
   return (
-    <section className="accordion">
-      <div className="container flex flex-col justify-between w-3/4 m-auto">
+    <section className="accordion py-5">
+      <div className="container flex flex-col justify-between w-3/5 m-auto">
         <h1 className="text-center pb-5 pt-10 text-4xl max-w-md m-auto font-bold">
           Frequently Asked Questions
         </h1>

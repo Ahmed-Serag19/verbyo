@@ -10,7 +10,7 @@ const Navbar = () => {
 
   return (
     <header className="w-full bg-custom-bg">
-      <nav className="w-4/5 flex justify-between m-auto py-5 items-center">
+      <nav className="md:w-4/5 flex nav justify-between m-auto py-5 px-5 items-center">
         <a href="/">
           <div className="logo-container text-black gap-2 flex justify-center items-center">
             <img src={VerbyoLogo} alt="verbyo website logo" />
