@@ -1,12 +1,18 @@
+import { useContext } from 'react';
 import VerbyoLogo from '../../../assets/verbyo-logo.png';
 import { useOS } from '../../utils/OsContext';
+import { LanguageContext } from '../../utils/LanguageContext';
+import { useTranslation } from 'react-i18next';
 
 const Navbar = () => {
-  const changeLanguage = (e) => {
-    const selectedLanguage = e.target.value;
-    console.log('Language selected:', selectedLanguage);
-  };
+  const { changeLanguage } = useContext(LanguageContext);
   const { handleDownloadClick } = useOS();
+  const { t } = useTranslation();
+
+  const handleLanguageChange = (e) => {
+    const selectedLanguage = e.target.value;
+    changeLanguage(selectedLanguage);
+  };
 
   return (
     <header className="w-full bg-custom-bg">
@@ -22,12 +28,12 @@ const Navbar = () => {
             onClick={handleDownloadClick}
             className="btn-bg-primary text-white py-2 px-6 rounded-3xl hover:bg-blue-600 transition duration-300"
           >
-            Download App
+            {t('Download App')}
           </button>
 
-          <div className="relative inline-block ">
+          <div className="relative inline-block">
             <select
-              onChange={changeLanguage}
+              onChange={handleLanguageChange}
               className="appearance-none cursor-pointer border border-gray-300 rounded-full p-2 pr-8 text-gray-700 bg-white hover:border-gray-400 focus:outline-none focus:ring-2 focus:ring-blue-500 transition-colors"
             >
               <option value="eng">Eng</option>

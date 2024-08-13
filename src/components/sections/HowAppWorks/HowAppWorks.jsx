@@ -3,7 +3,6 @@ import Gif from '../../../assets/gif-verbyo.gif';
 import MobileTop from '../../../assets/Subtract.png';
 import playButton from '../../../assets/play-button.png';
 import PropTypes from 'prop-types';
-// import AOS from 'aos';
 
 const useDeviceType = () => {
   const [deviceType, setDeviceType] = useState('desktop');
