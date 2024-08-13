@@ -76,10 +76,11 @@ Footer: The footer includes links to the Terms & Conditions, Privacy Policy, and
 Project Structure
 Here’s a brief overview of the project structure:
 
-php
-Copy code
+## Project Structure
+
+The project is organized into the following main directories and files:
+
 verbyo-app/
-│
 ├── public/ # Static files
 ├── src/ # Source code
 │ ├── assets/ # Images and icons
