@@ -1,10 +1,10 @@
 import { useEffect, useState, useRef } from 'react';
-import MobileImage from '../../../assets/what-you-can-do-1.svg';
-import MobileImage2 from '../../../assets/what-you-can-do-2.svg';
+import MobileImage from '../../../assets/iPhone 18.svg';
+import MobileImage2 from '../../../assets/iPhone 19.svg';
 import AOS from 'aos';
 
 const WhatYouCanDo = () => {
-  const [activeDiv, setActiveDiv] = useState('div1'); // Default to first image
+  const [activeDiv, setActiveDiv] = useState('div1');
   const [image, setImage] = useState(MobileImage);
   const [isVisible, setIsVisible] = useState(false);
   const sectionRef = useRef(null);
@@ -19,14 +19,13 @@ const WhatYouCanDo = () => {
       ([entry]) => {
         setIsVisible(entry.isIntersecting);
       },
-      { threshold: 0.1 } // Adjust this value to trigger the callback when 10% of the component is visible
+      { threshold: 0.1 }
     );
 
     if (sectionRef.current) {
       observer.observe(sectionRef.current);
     }
 
-    // Cleanup observer on component unmount
     return () => {
       if (sectionRef.current) {
         observer.unobserve(sectionRef.current);
@@ -40,7 +39,7 @@ const WhatYouCanDo = () => {
         const scrollY = window.scrollY;
         const sectionTop = sectionRef.current?.offsetTop || 0;
         const sectionHeight = sectionRef.current?.offsetHeight || 0;
-        const triggerPoint = sectionTop + sectionHeight / 2 - 100;
+        const triggerPoint = sectionTop + sectionHeight / 2 - 500;
 
         if (scrollY > triggerPoint) {
           setActiveDiv('div2');
@@ -66,7 +65,7 @@ const WhatYouCanDo = () => {
 
   return (
     <section
-      className="what-you-can-do w-full py-10"
+      className="what-you-can-do overflow-hidden w-full py-10"
       ref={sectionRef}
     >
       <div className="container pt-16 pb-3 m-auto bg-custom-bg rounded-lg">
@@ -114,17 +113,16 @@ const WhatYouCanDo = () => {
             </div>
           </div>
           <div
-            className="right-side-wycd relative bg-white w-2/5 flex justify-center items-center rounded-xl"
+            className="right-side-wycd overflow-hidden relative bg-white w-2/5 flex justify-center items-center rounded-xl"
             data-aos="fade"
             data-aos-duration="1000"
           >
             <div className="wycd-img-container p-10">
-              <div className="">
-                {' '}
+              <div>
                 <img
                   src={image}
                   alt="mobile"
-                  className="transition-opacity duration-1000" // Adding transition for opacity
+                  className="transition-opacity duration-1000"
                 />
               </div>
             </div>

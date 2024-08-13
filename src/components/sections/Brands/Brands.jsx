@@ -20,7 +20,7 @@ const Brands = () => {
           {isMobile ? (
             <Swiper
               modules={[Navigation, Pagination, Autoplay]}
-              spaceBetween={1}
+              spaceBetween={0}
               slidesPerView={3}
               rewind={true}
               loop={true}

@@ -4,7 +4,7 @@
 * {
   padding: 0;
   margin: 0;
-  box-sizing: border-box;
+  box-sizing: border-box !important;
   font-family: 'Inter', sans-serif;
 }
 .btn-bg-primary {
@@ -48,7 +48,7 @@
 }
 
 .swiper-slide {
-  transition: transform 0.5s ease-in-out; /* Smooth transition effect */
+  transition: transform 0.5s ease-in-out;
 }
 
 .swiper-wrapper {
@@ -63,6 +63,7 @@
 .post-img-container img {
   transition: transform 0.4s ease-in-out, box-shadow 0.4s ease-in-out;
   transform-origin: center center;
+  height: 260px;
 }
 
 .post-img-container:hover img {
@@ -78,8 +79,8 @@
   background-size: contain;
   background-repeat: no-repeat;
   background-position: center;
-  height: 650px;
-  width: 330px;
+  height: 600px;
+  width: 300px;
   margin: auto;
   display: flex;
   justify-content: center;
@@ -89,8 +90,8 @@
 }
 
 .gif-container img {
-  width: 300px;
-  height: 600px;
+  width: 275px;
+  height: 550px;
   margin: auto;
 }
 
@@ -105,7 +106,6 @@
 }
 .wycd-img-container div {
   position: absolute;
-
   left: 20%;
   right: 0;
   bottom: 0;
@@ -136,29 +136,12 @@
   align-items: center;
 }
 
-@media (max-width: 768px) {
-  .video-container {
-    width: 100%;
-  }
-}
-
-.campaign .container {
-  overflow: hidden;
-  margin: auto;
-  border-radius: 30px;
-  background: url('../src/assets/purple-bg.png') no-repeat;
-  background-size: cover;
-}
-.camp-img-container {
-  position: absolute;
-  width: 300px;
-  right: 100px;
-  bottom: -40px;
-}
-
 .special-bg {
   background-color: rgba(255, 255, 255, 0.2);
   transition: 0.3s all ease-in-out;
+}
+.special-bg:hover {
+  background-color: rgba(255, 255, 255, 0.4);
 }
 
 footer {
@@ -193,6 +176,97 @@ footer {
 .hero-responsive {
   background-color: #f4f8fb;
 }
+.campaign .container {
+  overflow: hidden;
+  margin: auto;
+  border-radius: 30px;
+  background: url('../src/assets/purple-bg.png') no-repeat;
+  background-size: cover;
+}
+.camp-img-container {
+  position: absolute;
+  width: 300px;
+  right: 100px;
+  bottom: -40px;
+}
+@media screen and (max-width: 1024px) {
+  .post-img-container img {
+    height: 214px;
+  }
+  .video-modal {
+    .relative {
+      width: 80%;
+    }
+  }
+  .what-to-share {
+    padding-top: 20px;
+    padding-bottom: 20px;
+    .container {
+      padding-top: 50px;
+      padding-bottom: 50px;
+    }
+    .grid {
+      gap: 20px;
+    }
+    .body-container {
+      height: 230px;
+      h1 {
+        font-size: 18px;
+        line-height: 23px;
+      }
+    }
+    .left-side-wts {
+      h1 {
+        padding-bottom: 15px;
+        font-size: 25px;
+      }
+      p {
+        font-size: 17px;
+      }
+      max-width: 70%;
+    }
+  }
+  .campaign {
+    padding-top: 30px;
+    padding-bottom: 30px;
+    padding-left: 30px;
+    padding-right: 30px;
+    .max-w-2xl {
+      max-width: 450px;
+    }
+    .container {
+      .camp-img-container {
+        position: absolute;
+        width: 300px;
+        right: 50px;
+        bottom: -40px;
+      }
+      h1 {
+        font-size: 32px;
+      }
+    }
+  }
+  .what-you-can-do {
+    .container {
+      .wycd-container {
+        padding: 30px;
+        .left-side-wycd {
+          gap: 20px;
+        }
+        .right-side-wycd {
+          .wycd-img-container {
+            height: 500px;
+            padding: 20px;
+            div {
+              left: 25px;
+              top: 10%;
+            }
+          }
+        }
+      }
+    }
+  }
+}
 @media screen and (max-width: 768px) {
   header {
     border-bottom: 1px solid rgb(210, 210, 210);
@@ -208,17 +282,496 @@ footer {
     .hero-main-img {
       width: 600px;
     }
+    button {
+      font-size: 20px;
+    }
   }
   .hero-avatar-container-tablet {
     background-color: #dfeefb;
     padding: 10px 0px;
     color: black !important;
-    /* width: 70%; */
+
     img {
       width: 20%;
     }
     p {
       font-size: 20px;
+    }
+  }
+  .what-you-can-do {
+    padding-bottom: 25px;
+    .container {
+      padding-top: 35px;
+      h1 {
+        padding: 20px;
+        font-size: 35px;
+      }
+      .wycd-container {
+        padding-left: 20px;
+        padding-right: 20px;
+        padding-top: 40px;
+        padding-bottom: 40px;
+        flex-direction: column;
+        gap: 15px;
+        .left-side-wycd {
+          flex-direction: column;
+          width: fit-content;
+          gap: 15px;
+        }
+        .right-side-wycd {
+          width: 100%;
+          .wycd-img-container {
+            div {
+              left: 30%;
+            }
+          }
+        }
+      }
+    }
+  }
+  .what-to-share {
+    padding-top: 20px;
+    padding-bottom: 20px;
+    .container {
+      flex-direction: column;
+      gap: 30px;
+      background-color: white;
+      padding-left: 20px;
+      padding-right: 20px;
+      .left-side-wts {
+        background-color: #f4f8fb;
+        padding: 30px;
+        border-radius: 15px;
+        max-width: fit-content;
+      }
+      .right-side-wts {
+        width: 70%;
+        button {
+          width: 100%;
+          font-size: 22px;
+        }
+      }
+    }
+  }
+  .how-app-works {
+    padding-top: 20px;
+    padding-bottom: 20px;
+    .container {
+      padding-top: 20px;
+      padding-bottom: 20px;
+      h1 {
+        padding: 10px 20px;
+        font-size: 35px;
+        padding-bottom: 25px;
+      }
+      p {
+        font-size: 20px;
+        padding: 0px 20px;
+        color: black;
+      }
+      .wycd-container {
+        flex-direction: column;
+        .left-side-wycd {
+          gap: 15px;
+          width: 100%;
+        }
+        .right-side-wycd {
+          .gif-bg {
+            height: 380px;
+            width: 180px;
+            margin: auto;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+            border-radius: 50px;
+            .gif-container img {
+              width: 165px;
+              height: 340px;
+              margin: auto;
+            }
+          }
+        }
+        .left-side-wycd {
+          p {
+            padding: 0px;
+          }
+        }
+      }
+    }
+  }
+  .accordion {
+    .container {
+      width: 75%;
+      h1 {
+        font-size: 30px;
+        padding-bottom: 30px;
+      }
+    }
+  }
+  .campaign {
+    padding-top: 20px;
+    padding-bottom: 20px;
+    padding-left: 20px;
+    padding-right: 20px;
+    .container {
+      .p-8 {
+        padding: 50px;
+      }
+      flex-direction: column;
+      .max-w-2xl {
+        max-width: 100%;
+      }
+      .relative {
+        position: relative;
+        display: flex;
+        justify-content: center;
+        height: 500px;
+
+        .camp-img-container {
+          position: absolute;
+          left: 50%;
+          transform: translate(-50%);
+          bottom: -120px;
+        }
+      }
+    }
+  }
+  footer {
+    .bottom-footer-part {
+      font-size: 15px;
+      .left-bottom-side {
+        gap: 10px;
+      }
+    }
+  }
+}
+@media screen and (max-width: 425px) {
+  header {
+    nav {
+      width: 100%;
+      .logo-container {
+        img {
+          width: 52px;
+        }
+        h1 {
+          font-size: 18px;
+        }
+      }
+      .right-side-nav {
+        button {
+          padding-left: 25px;
+          padding-right: 25px;
+          padding-top: 0px !important;
+          padding-bottom: 0px !important;
+        }
+      }
+    }
+  }
+  .hero-responsive {
+    .container {
+      padding: 10px;
+      div {
+        padding: 5px;
+      }
+      .hero-avatar-container-tablet {
+        padding: 30px;
+        margin-bottom: 10px;
+      }
+    }
+  }
+  .brands {
+    height: fit-content;
+    padding: 50px 0px;
+    div {
+      h1 {
+        font-size: 18px;
+      }
+      .brands-container {
+        width: 90%;
+        margin: auto;
+      }
+    }
+  }
+  .what-you-can-do {
+    .container {
+      h1 {
+        font-size: 24px;
+        font-weight: 700;
+        text-align: left;
+      }
+      .left-side-wycd {
+        div {
+          gap: 10px;
+          h2 {
+            font-size: 18px;
+          }
+          p {
+            font-size: 15px;
+          }
+        }
+      }
+      .right-side-wycd {
+        overflow: hidden;
+        height: 400px;
+        .wycd-img-container {
+          padding: 10px !important;
+          right: 50px;
+          bottom: -30px;
+          /* height: 100%; */
+        }
+      }
+    }
+  }
+  .what-to-share {
+    padding-top: 15px;
+    padding-bottom: 15px;
+    .container {
+      padding-top: 15px;
+      padding-bottom: 15px;
+      .right-side-wts {
+        width: 100%;
+      }
+    }
+    .posts-container {
+      padding: 20px;
+      .post-container {
+        height: fit-content;
+        max-width: fit-content;
+        img {
+          height: fit-content;
+        }
+      }
+    }
+  }
+  .how-app-works {
+    .container {
+      h1 {
+        font-size: 25px;
+      }
+      p {
+        font-size: 18px;
+      }
+      .wycd-container {
+        .haw-video-container {
+          padding: 10px;
+        }
+        .left-side-wycd {
+          gap: 8px;
+          h2 {
+            font-size: 18px;
+          }
+          p {
+            font-size: 16px;
+          }
+        }
+      }
+    }
+  }
+  .everyday-use-responsive {
+    padding: 15px;
+    .container {
+      padding-right: 10px;
+      padding-left: 10px;
+      h1 {
+        font-size: 27px;
+        text-align: left;
+      }
+      button {
+        margin-bottom: 20px;
+      }
+      .everyday-right-side {
+        .ed-img-container {
+          img {
+            width: 100%;
+          }
+        }
+      }
+    }
+  }
+  .accordion {
+    .container {
+      width: 85%;
+      h1 {
+        text-align: left;
+        font-size: 25px;
+      }
+    }
+  }
+  .campaign {
+    .container {
+      .inner-camp {
+        padding: 20px;
+        div {
+          gap: 15px;
+          h1 {
+            font-size: 25px;
+            margin-bottom: 1px;
+          }
+        }
+      }
+    }
+  }
+  footer {
+    .main-footer-container {
+      .top-footer-part {
+        padding-top: 30px;
+        padding-bottom: 30px;
+        flex-direction: column;
+        gap: 15px;
+        .logo-container {
+          span {
+            font-size: 18px;
+          }
+          h1 {
+            font-size: 23px;
+          }
+        }
+      }
+      .bottom-footer-part {
+        flex-direction: column;
+        align-items: center;
+        gap: 20px;
+        .left-bottom-side {
+          gap: 25px;
+        }
+      }
+    }
+  }
+}
+@media screen and (max-width: 375px) {
+  header {
+    .nav {
+      padding: 5px 5px;
+      .logo-container {
+        justify-content: flex-start;
+        gap: 5px;
+        img {
+          width: 45px;
+        }
+        h1 {
+          font-size: 14px;
+        }
+      }
+      .right-side-nav {
+        align-items: center;
+        .btn-bg-primary {
+          width: 130px;
+          height: 35px;
+          padding-left: 15px;
+          padding-right: 15px;
+          font-size: 14px !important;
+          padding-top: 5px;
+          padding-bottom: 5px;
+        }
+      }
+    }
+  }
+  .hero-responsive {
+    .container {
+      .hero-avatar-container-tablet {
+        button {
+          font-size: 17px;
+        }
+        img {
+          width: 80px;
+        }
+        p {
+          font-size: 14px;
+        }
+        padding: 15px;
+      }
+      div {
+        h1 {
+          font-size: 25px;
+        }
+        p {
+          font-size: 16px;
+        }
+      }
+    }
+  }
+}
+@media screen and (max-width: 320px) {
+  .right-side-nav {
+    select {
+      padding-right: 25px;
+    }
+  }
+  .what-you-can-do {
+    .container {
+      h1 {
+        font-size: 21px;
+      }
+      .wycd-container {
+        .left-side-wycd {
+          h2 {
+            font-size: 16px;
+          }
+          p {
+            font-size: 14px;
+          }
+        }
+      }
+    }
+  }
+  .what-to-share {
+    .container {
+      .left-side-wts {
+        padding: 20px;
+        h1 {
+          font-size: 20px;
+        }
+      }
+    }
+  }
+  button {
+    font-size: 16px !important;
+  }
+  .post-container {
+    .body-container {
+      height: 250px;
+    }
+  }
+  .campaign {
+    .container {
+      .relative {
+        height: 400px;
+        .camp-img-container {
+          width: 90%;
+        }
+      }
+    }
+  }
+  footer {
+    .main-footer-container {
+      .top-footer-part {
+        padding-top: 30px;
+        padding-bottom: 30px;
+        flex-direction: column;
+        gap: 15px;
+        .logo-container {
+          span {
+            font-size: 18px;
+          }
+          h1 {
+            font-size: 23px;
+          }
+        }
+      }
+      .bottom-footer-part {
+        flex-direction: column;
+        align-items: center;
+        gap: 20px;
+        .left-bottom-side {
+          gap: 10px;
+          font-size: 14px;
+        }
+        .right-bottom-side {
+          text-align: center;
+          font-size: 16px;
+        }
+      }
     }
   }
 }

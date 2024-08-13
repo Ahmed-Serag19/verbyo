@@ -23,7 +23,7 @@ const Footer = () => {
             </a>
             <a
               className="footer-icons special-footer-link"
-              href="https://x.om/@verbyoapp"
+              href="https://x.com/@verbyoapp"
               target="_blank"
             >
               <FaSquareXTwitter />
@@ -58,7 +58,9 @@ const Footer = () => {
             </a>
           </div>
           <div className="right-bottom-side">
-            <span>Copyright © Verbyo 2019 All Rights Reserved.</span>
+            <span className="font-bold">
+              Copyright © Verbyo 2019 All Rights Reserved.
+            </span>
           </div>
         </div>
       </div>

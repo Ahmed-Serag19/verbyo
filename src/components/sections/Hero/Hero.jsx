@@ -48,7 +48,7 @@ const Hero = ({ openModal }) => {
   return (
     <>
       {deviceType === 'mobile' || deviceType === 'tablet' ? (
-        <section className="hero-responsive">
+        <section className="hero-responsive overflow-hidden">
           <div className="container m-auto p-10">
             <div className="flex flex-col justify-center items-center m-auto p-5">
               <h1 className="text-3xl font-bold text-gray-900 pt-8">
@@ -87,7 +87,7 @@ const Hero = ({ openModal }) => {
               </button>
               <button
                 onClick={openModal}
-                className="btn-secondary w-full flex justify-center items-center gap-2 bg-white hover:bg-slate-100 transition duration-300 py-3 rounded-full border-black font-bold"
+                className="btn-secondary hover:bg-gray-200 w-full flex justify-center items-center gap-2 bg-white hover:bg-slate-100 transition duration-300 py-3 rounded-full border-black font-bold"
               >
                 <img
                   src={playButton}
@@ -100,7 +100,7 @@ const Hero = ({ openModal }) => {
           </div>
         </section>
       ) : (
-        <section className="hero bg-custom-bg">
+        <section className="hero overflow-hidden bg-custom-bg">
           <div className="container mx-auto flex flex-row gap-10 items-center px-6 pt-5">
             <div
               data-aos="fade-right"
@@ -131,7 +131,7 @@ const Hero = ({ openModal }) => {
                 </button>
                 <button
                   onClick={openModal}
-                  className="btn-secondary flex justify-center items-center gap-2 bg-white hover:bg-slate-100 transition duration-300 px-6 py-3 rounded-full border-black font-bold"
+                  className="btn-secondary hover:bg-gray-200 flex justify-center items-center gap-2 bg-white hover:bg-slate-100 transition duration-300 px-6 py-3 rounded-full border-black font-bold"
                 >
                   <img
                     src={playButton}
