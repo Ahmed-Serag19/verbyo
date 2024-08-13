@@ -80,22 +80,10 @@ Here’s a brief overview of the project structure:
 
 The project is organized into the following main directories and files:
 
-verbyo-app/
-├── public/ # Static files
-├── src/ # Source code
-│ ├── assets/ # Images and icons
-│ ├── components/ # Reusable components
-│ ├── contexts/ # React context for global state
-│ ├── pages/ # Page components for routing
-│ ├── styles/ # Global and component-specific styles
-│ ├── utils/ # Utility functions and context providers
-│ └── index.js # Entry point of the application
-├── .eslintrc.js # ESLint configuration
-├── tailwind.config.js # Tailwind CSS configuration
-├── vite.config.js # Vite configuration
-├── package.json # Node.js dependencies and scripts
-└── README.md # This file
-Responsive Design
+![Folder Structure](./src/assets/2024-08-13%2011_18_32-Clipboard.png)
+
+## Responsive Design
+
 The app is designed to be fully responsive, ensuring a seamless user experience on all device sizes:
 
 Mobile: Optimized layouts for smaller screens, including responsive image scaling and touch-friendly interactions.
