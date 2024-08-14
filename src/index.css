@@ -706,6 +706,13 @@ footer {
       }
     }
   }
+  .campaign {
+    .container {
+      .relative {
+        height: 400px !important;
+      }
+    }
+  }
 }
 @media screen and (max-width: 320px) {
   .right-side-nav {
