@@ -1,4 +1,3 @@
-import { Helmet } from 'react-helmet';
 import { useOS } from '../../utils/OsContext';
 import Posts from './Posts';
 
@@ -6,13 +5,6 @@ const WhatToShare = () => {
   const { handleDownloadClick } = useOS();
   return (
     <>
-      <Helmet>
-        <title>What to Share - Verbyo</title>
-        <meta
-          name="description"
-          content="What content can you share with Verbyo? Discover the possibilities."
-        />
-      </Helmet>
       <section className="what-to-share py-10 ">
         <div className="container flex m-auto rounded-lg bg-custom-bg py-16 px-10 justify-between items-center">
           <div className="left-side-wts">

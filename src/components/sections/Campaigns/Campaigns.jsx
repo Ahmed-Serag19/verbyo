@@ -1,4 +1,3 @@
-import { Helmet } from 'react-helmet';
 import MobileImage from '../../../assets/iPhone 16.svg';
 import MobileImage2 from '../../../assets/iPhone 17.svg';
 import { useState, useEffect } from 'react';
@@ -41,13 +40,6 @@ const Campaigns = () => {
 
   return (
     <>
-      <Helmet>
-        <title>Campaigns - Verbyo</title>
-        <meta
-          name="description"
-          content="Advertise with us - Explore our campaigns and how Verbyo can help you."
-        />
-      </Helmet>
       <section className="campaign py-20 px-20 rounded-lg">
         <div className="container flex justify-between">
           <div className="inner-camp rounded-lg p-8 flex flex-col lg:flex-row justify-between items-center">

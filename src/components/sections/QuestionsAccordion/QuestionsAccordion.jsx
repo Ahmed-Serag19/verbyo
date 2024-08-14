@@ -5,7 +5,6 @@ import {
 } from '@material-tailwind/react';
 import { useState } from 'react';
 import PropTypes from 'prop-types';
-import { Helmet } from 'react-helmet';
 function Icon({ id, open }) {
   return (
     <svg
@@ -39,14 +38,6 @@ const QuestionsAccordion = () => {
 
   return (
     <>
-      <Helmet>
-        <title>FAQs - Verbyo</title>
-        <meta
-          name="description"
-          content="Frequently Asked Questions about Verbyo."
-        />
-      </Helmet>
-
       <section className="accordion py-5">
         <div className="container flex flex-col justify-between w-3/5 m-auto">
           <h1 className="text-center pb-5 pt-10 text-4xl max-w-md m-auto font-bold">

@@ -2,7 +2,6 @@ import { useEffect, useState, useRef } from 'react';
 import MobileImage from '../../../assets/iPhone 18.svg';
 import MobileImage2 from '../../../assets/iPhone 19.svg';
 import AOS from 'aos';
-import { Helmet } from 'react-helmet';
 
 const WhatYouCanDo = () => {
   const [activeDiv, setActiveDiv] = useState('div1');
@@ -66,14 +65,6 @@ const WhatYouCanDo = () => {
 
   return (
     <>
-      <Helmet>
-        <title>What You Can Do - Verbyo</title>
-        <meta
-          name="description"
-          content="Explore what you can do with Verbyo, the fastest growing app."
-        />
-      </Helmet>
-
       <section
         className="what-you-can-do overflow-hidden w-full py-10"
         ref={sectionRef}
@@ -129,7 +120,7 @@ const WhatYouCanDo = () => {
               data-aos-duration="1000"
             >
               <div className="wycd-img-container p-10">
-                <div>
+                <div id="wycd-absolute">
                   <img
                     src={image}
                     alt="mobile"

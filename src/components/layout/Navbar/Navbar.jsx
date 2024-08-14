@@ -3,7 +3,6 @@ import VerbyoLogo from '../../../assets/verbyo-logo.png';
 import { useOS } from '../../utils/OsContext';
 import { LanguageContext } from '../../utils/LanguageContext';
 import { useTranslation } from 'react-i18next';
-import { Helmet } from 'react-helmet';
 
 const Navbar = () => {
   const { changeLanguage } = useContext(LanguageContext);
@@ -17,13 +16,6 @@ const Navbar = () => {
 
   return (
     <>
-      <Helmet>
-        <title>Navbar - Verbyo</title>
-        <meta
-          name="description"
-          content="Navigate through Verbyo website with our intuitive navbar."
-        />
-      </Helmet>
       <header className="w-full bg-custom-bg">
         <nav className="md:w-4/5 flex nav justify-between m-auto py-5 px-5 items-center">
           <a href="/">

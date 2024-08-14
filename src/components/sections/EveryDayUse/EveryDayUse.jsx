@@ -1,7 +1,6 @@
 import { useEffect, useState } from 'react';
 import BrowsingWoman from '../../../assets/browsing-woman.png';
 import { useOS } from '../../utils/OsContext';
-import { Helmet } from 'react-helmet';
 
 const useDeviceType = () => {
   const [deviceType, setDeviceType] = useState('desktop');
@@ -32,13 +31,6 @@ const EveryDayUse = () => {
 
   return (
     <>
-      <Helmet>
-        <title>EveryDay Use - Verbyo</title>
-        <meta
-          name="description"
-          content="Verbyo is for everyday people - Learn how Verbyo fits into your daily life."
-        />
-      </Helmet>
       {deviceType === 'mobile' || deviceType === 'tablet' ? (
         <>
           <section className="py-10 everyday-use-responsive">

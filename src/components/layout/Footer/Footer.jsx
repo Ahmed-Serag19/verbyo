@@ -2,18 +2,10 @@ import { BiLogoInstagramAlt } from 'react-icons/bi';
 import { BiLogoFacebookCircle } from 'react-icons/bi';
 import { FaSquareXTwitter } from 'react-icons/fa6';
 import VerbyoLogo from '../../../assets/verbyo-logo.png';
-import { Helmet } from 'react-helmet';
 
 const Footer = () => {
   return (
     <>
-      <Helmet>
-        <title>Footer - Verbyo</title>
-        <meta
-          name="description"
-          content="Verbyo website footer including social media links and terms & conditions."
-        />
-      </Helmet>
       <footer>
         <div className="main-footer-container container m-auto">
           <div className="top-footer-part py-5 flex justify-between">
@@ -27,6 +19,7 @@ const Footer = () => {
                 className="footer-icons fb-icon"
                 href="https://www.facebook.com/verbyo"
                 target="_blank"
+                aria-label="Follow us on Facebook"
               >
                 <BiLogoFacebookCircle />
               </a>
@@ -34,6 +27,7 @@ const Footer = () => {
                 className="footer-icons special-footer-link"
                 href="https://x.com/@verbyoapp"
                 target="_blank"
+                aria-label="Follow us on X (formerly Twitter)"
               >
                 <FaSquareXTwitter />
               </a>
@@ -41,6 +35,7 @@ const Footer = () => {
                 className="footer-icons insta-icon"
                 href="https://www.instagram.com/verbyo"
                 target="_blank"
+                aria-label="Follow us on Instagram"
               >
                 <BiLogoInstagramAlt />
               </a>

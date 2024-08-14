@@ -10,18 +10,11 @@ import Addidas from '../../../assets/logo-adidas-vector-inkythuatso-01-29-09-08-
 import UnderArmour from '../../../assets/Under_Armour-Logo.wine 1.png';
 import Unicef from '../../../assets/UNICEF-logo 1.png';
 import Lyft from '../../../assets/Lyft-Logo.wine 1.png';
-import { Helmet } from 'react-helmet';
 
 const Brands = () => {
+  console.log(isMobile);
   return (
     <>
-      <Helmet>
-        <title>Brands - Verbyo</title>
-        <meta
-          name="description"
-          content="Trusted by brands & foundations - See the brands that trust Verbyo."
-        />
-      </Helmet>
       <section className="brands text-center h-96 overflow-hidden w-full">
         <div className="flex flex-col justify-center items-center h-full gap-16">
           <h1 className="text-2xl">
@@ -32,8 +25,17 @@ const Brands = () => {
               <Swiper
                 modules={[Navigation, Pagination, Autoplay]}
                 spaceBetween={0}
-                slidesPerView={3}
                 rewind={true}
+                // slidesPerView={2}
+                breakpoints={{
+                  0: {
+                    slidesPerView: 2,
+                  },
+
+                  640: {
+                    slidesPerView: 3,
+                  },
+                }}
                 loop={true}
                 autoplay={{
                   delay: 2000,

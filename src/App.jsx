@@ -12,7 +12,7 @@ import YoutubeModal from './components/utils/YoutubeModal';
 import Campaigns from './components/sections/Campaigns/Campaigns';
 import Footer from './components/layout/Footer/Footer';
 import { Helmet } from 'react-helmet';
-
+import ThumbVerbyo from './assets/thumb_Verbyo.jpg';
 function App() {
   const [isModalOpen, setModalOpen] = useState(false);
 
@@ -27,26 +27,46 @@ function App() {
   return (
     <>
       <Helmet>
-        <title>Verbyo</title>
+        {/* <!-- Primary Meta Tags --> */}
+        <title>
+          Create content on your social account and get rewarded
+        </title>
         <meta
-          name="description"
-          content="Verbyo - Amplify content on your social media and get rewarded."
+          name="title"
+          content="Create content on your social account and get rewarded"
         />
         <meta
+          name="description"
+          content="The app that rewards you every time you create content and post it on your social media account. "
+        />
+
+        {/* <!-- Open Graph / Facebook --> */}
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content="https://verbyo.com" />
+        <meta
           property="og:title"
-          content="Verbyo - Amplify Your Social Media Content"
+          content="Create content on your social account and get rewarded"
         />
         <meta
           property="og:description"
-          content="The only app in the world that rewards you every time you create content on your social media account."
+          content="The app that rewards you every time you create content and post it on your social media account. "
         />
-        {/* These next 3 must be chosen to the right link after your website is up and working so make sure to change them */}
-        {/* <meta
-          property="og:image"
-          content="https://verbyo.com/path-to-your-og-image.jpg"
+        <meta property="og:image" content={ThumbVerbyo} />
+
+        {/* <!-- Twitter --> */}
+        <meta property="twitter:card" content="summary_large_image" />
+        <meta property="twitter:url" content="https://verbyo.com" />
+        <meta
+          property="twitter:title"
+          content="Create content on your social account and get rewarded"
         />
-        <meta property="og:url" content="https://verbyo.com" />
-        <meta name="twitter:card" content="summary_large_image" />  */}
+        <meta name="robots" content="index, follow" />
+
+        <meta
+          property="twitter:description"
+          content="The app that rewards you every time you create content and post it on your social media account. "
+        />
+        <meta property="twitter:image" content={ThumbVerbyo} />
       </Helmet>
       <OSProvider>
         <Navbar />
