@@ -270,7 +270,13 @@ footer {
 @media screen and (max-width: 768px) {
   header {
     border-bottom: 1px solid rgb(210, 210, 210);
-    background-color: #f4f8fb !important;
+    /* background-color: #f4f8fb !important; */
+    position: sticky;
+    top: 0;
+    right: 0;
+    left: 0;
+    z-index: 9000;
+    background-color: rgba(244, 248, 251, 0.95) !important;
     .nav {
       padding: 10px 10px;
     }
@@ -430,9 +436,10 @@ footer {
 
         .camp-img-container {
           position: absolute;
-          left: 50%;
+          left: 73%;
           transform: translate(-50%);
           bottom: -120px;
+          width: 90%;
         }
       }
     }
@@ -610,6 +617,14 @@ footer {
           }
         }
       }
+      .relative {
+        height: 500px;
+        .camp-img-container {
+          left: 50%;
+          width: 70%;
+          top: 0px;
+        }
+      }
     }
   }
   footer {
@@ -691,6 +706,13 @@ footer {
       }
     }
   }
+  .campaign {
+    .container {
+      .relative {
+        height: 400px !important;
+      }
+    }
+  }
 }
 @media screen and (max-width: 320px) {
   .right-side-nav {
@@ -738,7 +760,7 @@ footer {
       .relative {
         height: 400px;
         .camp-img-container {
-          width: 90%;
+          width: 80%;
         }
       }
     }
@@ -764,12 +786,12 @@ footer {
         align-items: center;
         gap: 20px;
         .left-bottom-side {
-          gap: 10px;
-          font-size: 14px;
+          gap: 5px;
+          font-size: 12px;
         }
         .right-bottom-side {
           text-align: center;
-          font-size: 16px;
+          font-size: 14px;
         }
       }
     }

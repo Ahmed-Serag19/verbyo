@@ -2,6 +2,7 @@ import { useEffect, useState, useRef } from 'react';
 import MobileImage from '../../../assets/iPhone 18.svg';
 import MobileImage2 from '../../../assets/iPhone 19.svg';
 import AOS from 'aos';
+import { Helmet } from 'react-helmet';
 
 const WhatYouCanDo = () => {
   const [activeDiv, setActiveDiv] = useState('div1');
@@ -64,72 +65,83 @@ const WhatYouCanDo = () => {
   };
 
   return (
-    <section
-      className="what-you-can-do overflow-hidden w-full py-10"
-      ref={sectionRef}
-    >
-      <div className="container pt-16 pb-3 m-auto bg-custom-bg rounded-lg">
-        <h1 className="text-4xl m-auto font-bold max-w-4xl text-center">
-          What you can do with the fastest growing app
-        </h1>
-        <div className="wycd-container px-10 py-16 flex justify-around items-center">
-          <div className="left-side-wycd flex flex-col gap-12 w-1/2">
-            <div
-              onClick={() => handleDivClick('div1')}
-              className={`transition duration-300 rounded-lg p-5 flex cursor-pointer flex-col gap-5 ${
-                activeDiv === 'div1'
-                  ? 'bg-blue-100'
-                  : 'bg-white hover:bg-blue-50'
-              }`}
-            >
-              <h2 className="text-xl font-bold ">
-                Create a post on your social media account and get
-                rewarded.
-              </h2>
-              <p>
-                Create content on your social media account about
-                intriguing topics, using the images and captions
-                provided by advertisers or foundations. Verify your
-                post and get rewarded instantly.
-              </p>
+    <>
+      <Helmet>
+        <title>What You Can Do - Verbyo</title>
+        <meta
+          name="description"
+          content="Explore what you can do with Verbyo, the fastest growing app."
+        />
+      </Helmet>
+
+      <section
+        className="what-you-can-do overflow-hidden w-full py-10"
+        ref={sectionRef}
+      >
+        <div className="container pt-16 pb-3 m-auto bg-custom-bg rounded-lg">
+          <h1 className="text-4xl m-auto font-bold max-w-4xl text-center">
+            What you can do with the fastest growing app
+          </h1>
+          <div className="wycd-container px-10 py-16 flex justify-around items-center">
+            <div className="left-side-wycd flex flex-col gap-12 w-1/2">
+              <div
+                onClick={() => handleDivClick('div1')}
+                className={`transition duration-300 rounded-lg p-5 flex cursor-pointer flex-col gap-5 ${
+                  activeDiv === 'div1'
+                    ? 'bg-blue-100'
+                    : 'bg-white hover:bg-blue-50'
+                }`}
+              >
+                <h2 className="text-xl font-bold ">
+                  Create a post on your social media account and get
+                  rewarded.
+                </h2>
+                <p>
+                  Create content on your social media account about
+                  intriguing topics, using the images and captions
+                  provided by advertisers or foundations. Verify your
+                  post and get rewarded instantly.
+                </p>
+              </div>
+              <div
+                onClick={() => handleDivClick('div2')}
+                className={`transition duration-300 rounded-lg p-5 cursor-pointer flex flex-col gap-5 ${
+                  activeDiv === 'div2'
+                    ? 'bg-blue-100'
+                    : 'bg-white hover:bg-blue-50'
+                }`}
+              >
+                <h2 className="text-xl font-bold">
+                  Create original content based on a script and share
+                  it on your social media account.
+                </h2>
+                <p>
+                  Unleash your creativity by creating original content
+                  based on a script provided by advertisers, post it
+                  on your social media account and get rewarded for
+                  this.
+                </p>
+              </div>
             </div>
             <div
-              onClick={() => handleDivClick('div2')}
-              className={`transition duration-300 rounded-lg p-5 cursor-pointer flex flex-col gap-5 ${
-                activeDiv === 'div2'
-                  ? 'bg-blue-100'
-                  : 'bg-white hover:bg-blue-50'
-              }`}
+              className="right-side-wycd overflow-hidden relative bg-white w-2/5 flex justify-center items-center rounded-xl"
+              data-aos="fade"
+              data-aos-duration="1000"
             >
-              <h2 className="text-xl font-bold">
-                Create original content based on a script and share it
-                on your social media account.
-              </h2>
-              <p>
-                Unleash your creativity by creating original content
-                based on a script provided by advertisers, post it on
-                your social media account and get rewarded for this.
-              </p>
-            </div>
-          </div>
-          <div
-            className="right-side-wycd overflow-hidden relative bg-white w-2/5 flex justify-center items-center rounded-xl"
-            data-aos="fade"
-            data-aos-duration="1000"
-          >
-            <div className="wycd-img-container p-10">
-              <div>
-                <img
-                  src={image}
-                  alt="mobile"
-                  className="transition-opacity duration-1000"
-                />
+              <div className="wycd-img-container p-10">
+                <div>
+                  <img
+                    src={image}
+                    alt="mobile"
+                    className="transition-opacity duration-1000"
+                  />
+                </div>
               </div>
             </div>
           </div>
         </div>
-      </div>
-    </section>
+      </section>
+    </>
   );
 };
 

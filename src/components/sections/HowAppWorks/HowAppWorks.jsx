@@ -3,6 +3,7 @@ import Gif from '../../../assets/gif-verbyo.gif';
 import MobileTop from '../../../assets/Subtract.png';
 import playButton from '../../../assets/play-button.png';
 import PropTypes from 'prop-types';
+import { Helmet } from 'react-helmet';
 
 const useDeviceType = () => {
   const [deviceType, setDeviceType] = useState('desktop');
@@ -37,6 +38,13 @@ const HowAppWorks = ({ openModal }) => {
 
   return (
     <>
+      <Helmet>
+        <title>How It Works - Verbyo</title>
+        <meta
+          name="description"
+          content="Learn how Verbyo works in just three simple steps."
+        />
+      </Helmet>
       {deviceType === 'mobile' || deviceType === 'tablet' ? (
         <>
           <section className="how-app-works overflow-hidden pt-5 w-full">

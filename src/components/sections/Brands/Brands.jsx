@@ -10,70 +10,86 @@ import Addidas from '../../../assets/logo-adidas-vector-inkythuatso-01-29-09-08-
 import UnderArmour from '../../../assets/Under_Armour-Logo.wine 1.png';
 import Unicef from '../../../assets/UNICEF-logo 1.png';
 import Lyft from '../../../assets/Lyft-Logo.wine 1.png';
+import { Helmet } from 'react-helmet';
 
 const Brands = () => {
   return (
-    <section className="brands text-center h-96 overflow-hidden w-full">
-      <div className="flex flex-col justify-center items-center h-full gap-16">
-        <h1 className="text-2xl">Trusted by brands & foundations</h1>
-        <div className="brands-container w-screen">
-          {isMobile ? (
-            <Swiper
-              modules={[Navigation, Pagination, Autoplay]}
-              spaceBetween={0}
-              slidesPerView={3}
-              rewind={true}
-              loop={true}
-              autoplay={{
-                delay: 2000,
-                disableOnInteraction: false,
-              }}
-              speed={500}
-            >
-              <SwiperSlide className="flex justify-center items-center">
-                <img src={Isco} alt="isco logo" className="h-16" />
-              </SwiperSlide>
-              <SwiperSlide className="flex justify-center items-center">
+    <>
+      <Helmet>
+        <title>Brands - Verbyo</title>
+        <meta
+          name="description"
+          content="Trusted by brands & foundations - See the brands that trust Verbyo."
+        />
+      </Helmet>
+      <section className="brands text-center h-96 overflow-hidden w-full">
+        <div className="flex flex-col justify-center items-center h-full gap-16">
+          <h1 className="text-2xl">
+            Trusted by brands & foundations
+          </h1>
+          <div className="brands-container w-screen">
+            {isMobile ? (
+              <Swiper
+                modules={[Navigation, Pagination, Autoplay]}
+                spaceBetween={0}
+                slidesPerView={3}
+                rewind={true}
+                loop={true}
+                autoplay={{
+                  delay: 2000,
+                  disableOnInteraction: false,
+                }}
+                speed={500}
+              >
+                <SwiperSlide className="flex justify-center items-center">
+                  <img src={Isco} alt="isco logo" className="h-16" />
+                </SwiperSlide>
+                <SwiperSlide className="flex justify-center items-center">
+                  <img
+                    src={Addidas}
+                    alt="addidas logo"
+                    className="h-16"
+                  />
+                </SwiperSlide>
+                <SwiperSlide className="flex justify-center items-center">
+                  <img
+                    src={Unicef}
+                    alt="unicef logo"
+                    className="h-16"
+                  />
+                </SwiperSlide>
+                <SwiperSlide className="flex justify-center items-center">
+                  <img
+                    src={UnderArmour}
+                    alt="under armour logo"
+                    className="h-16"
+                  />
+                </SwiperSlide>
+                <SwiperSlide className="flex justify-center items-center">
+                  <img src={Lyft} alt="lyft logo" className="h-16" />
+                </SwiperSlide>
+              </Swiper>
+            ) : (
+              <div className="brands-container flex gap-20 justify-center items-center">
+                <img src={Isco} alt="isco logo" className="p-3" />
                 <img
                   src={Addidas}
                   alt="addidas logo"
-                  className="h-16"
+                  className="p-3"
                 />
-              </SwiperSlide>
-              <SwiperSlide className="flex justify-center items-center">
-                <img
-                  src={Unicef}
-                  alt="unicef logo"
-                  className="h-16"
-                />
-              </SwiperSlide>
-              <SwiperSlide className="flex justify-center items-center">
+                <img src={Unicef} alt="unicef logo" className="p-3" />
                 <img
                   src={UnderArmour}
                   alt="under armour logo"
-                  className="h-16"
+                  className="p-3"
                 />
-              </SwiperSlide>
-              <SwiperSlide className="flex justify-center items-center">
-                <img src={Lyft} alt="lyft logo" className="h-16" />
-              </SwiperSlide>
-            </Swiper>
-          ) : (
-            <div className="brands-container flex gap-20 justify-center items-center">
-              <img src={Isco} alt="isco logo" className="p-3" />
-              <img src={Addidas} alt="addidas logo" className="p-3" />
-              <img src={Unicef} alt="unicef logo" className="p-3" />
-              <img
-                src={UnderArmour}
-                alt="under armour logo"
-                className="p-3"
-              />
-              <img src={Lyft} alt="lyft logo" className="p-3" />
-            </div>
-          )}
+                <img src={Lyft} alt="lyft logo" className="p-3" />
+              </div>
+            )}
+          </div>
         </div>
-      </div>
-    </section>
+      </section>
+    </>
   );
 };
 

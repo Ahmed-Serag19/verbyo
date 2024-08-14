@@ -5,6 +5,7 @@ import playButton from '../../../assets/play-button.png';
 import AOS from 'aos';
 import { useOS } from '../../utils/OsContext';
 import PropTypes from 'prop-types';
+import { Helmet } from 'react-helmet';
 
 const useDeviceType = () => {
   const [deviceType, setDeviceType] = useState('desktop');
@@ -47,6 +48,13 @@ const Hero = ({ openModal }) => {
 
   return (
     <>
+      <Helmet>
+        <title>Hero - Verbyo</title>
+        <meta
+          name="description"
+          content="Amplify content on your social media account and get rewarded with Verbyo."
+        />
+      </Helmet>
       {deviceType === 'mobile' || deviceType === 'tablet' ? (
         <section className="hero-responsive overflow-hidden">
           <div className="container m-auto p-10">
