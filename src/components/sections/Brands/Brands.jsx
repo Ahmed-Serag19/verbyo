@@ -12,7 +12,6 @@ import Unicef from '../../../assets/UNICEF-logo 1.png';
 import Lyft from '../../../assets/Lyft-Logo.wine 1.png';
 
 const Brands = () => {
-  console.log(isMobile);
   return (
     <>
       <section className="brands text-center h-96 overflow-hidden w-full">
