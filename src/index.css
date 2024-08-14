@@ -270,7 +270,13 @@ footer {
 @media screen and (max-width: 768px) {
   header {
     border-bottom: 1px solid rgb(210, 210, 210);
-    background-color: #f4f8fb !important;
+    /* background-color: #f4f8fb !important; */
+    position: sticky;
+    top: 0;
+    right: 0;
+    left: 0;
+    z-index: 9000;
+    background-color: rgba(244, 248, 251, 0.95) !important;
     .nav {
       padding: 10px 10px;
     }
