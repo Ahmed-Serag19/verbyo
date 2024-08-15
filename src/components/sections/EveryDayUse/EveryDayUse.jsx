@@ -1,26 +1,25 @@
-import { useEffect, useState } from 'react';
-import BrowsingWoman from '../../../assets/browsing-woman.png';
-import { useOS } from '../../utils/OsContext';
+import { useEffect, useState } from "react";
+import BrowsingWoman from "../../../assets/browsing-woman.png";
+import { useOS } from "../../utils/OsContext";
 
 const useDeviceType = () => {
-  const [deviceType, setDeviceType] = useState('desktop');
+  const [deviceType, setDeviceType] = useState("desktop");
 
   const updateDeviceType = () => {
     const width = window.innerWidth;
     if (width <= 480) {
-      setDeviceType('mobile');
+      setDeviceType("mobile");
     } else if (width <= 768) {
-      setDeviceType('tablet');
+      setDeviceType("tablet");
     } else {
-      setDeviceType('desktop');
+      setDeviceType("desktop");
     }
   };
 
   useEffect(() => {
     updateDeviceType();
-    window.addEventListener('resize', updateDeviceType);
-    return () =>
-      window.removeEventListener('resize', updateDeviceType);
+    window.addEventListener("resize", updateDeviceType);
+    return () => window.removeEventListener("resize", updateDeviceType);
   }, []);
 
   return deviceType;
@@ -31,20 +30,19 @@ const EveryDayUse = () => {
 
   return (
     <>
-      {deviceType === 'mobile' || deviceType === 'tablet' ? (
+      {deviceType === "mobile" || deviceType === "tablet" ? (
         <>
           <section className="py-10 everyday-use-responsive">
             <div className="container flex flex-col px-10">
               <h1 className="text-3xl font-bold text-center">
-                <span className="text-blue-700">People </span>like you
-                are using
+                <span className="text-blue-700">People </span>like you are using
               </h1>
               <p className="text-gray-800 text-lg max-w-3xl py-5">
-                You don’t need to be an influencer to create content
-                and earn rewards. This app is for everyday individuals
-                who want to enhance their social media feed, bring
-                fresh ideas to their friends, or raise awareness for
-                important issues in our communities and the world.
+                You don’t need to be an influencer to create content and earn
+                rewards. This app is for everyday individuals who want to
+                enhance their social media feed, bring fresh ideas to their
+                friends, or raise awareness for important issues in our
+                communities and the world.
               </p>
               <div>
                 <button
@@ -74,11 +72,11 @@ const EveryDayUse = () => {
                 Verbyo is for everyday people
               </h1>
               <p className="text-gray-600 max-w-3xl">
-                You don’t need to be an influencer to create content
-                and earn rewards. This app is for everyday individuals
-                who want to enhance their social media feed, bring
-                fresh ideas to their friends, or raise awareness for
-                important issues in our communities and the world.
+                You don’t need to be an influencer to create content and earn
+                rewards. This app is for everyday individuals who want to
+                enhance their social media feed, bring fresh ideas to their
+                friends, or raise awareness for important issues in our
+                communities and the world.
               </p>
               <div>
                 <button

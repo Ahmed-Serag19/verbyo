@@ -390,11 +390,18 @@ footer {
             justify-content: center;
             align-items: center;
             position: relative;
-            border-radius: 50px;
-            .gif-container img {
-              width: 165px;
-              height: 340px;
-              margin: auto;
+            border-radius: 30px !important;
+            .absolute {
+              top: 10px;
+            }
+            .gif-container {
+              img {
+                border-radius: 15px;
+                width: 165px;
+                height: 340px;
+                padding-top: 0px;
+                margin: auto;
+              }
             }
           }
         }
@@ -453,7 +460,8 @@ footer {
     }
   }
 }
-@media screen and (max-width: 425px) {
+
+@media screen and (max-width: 426px) {
   header {
     nav {
       width: 100%;
@@ -507,27 +515,6 @@ footer {
         font-weight: 700;
         text-align: left;
       }
-      .left-side-wycd {
-        div {
-          gap: 10px;
-          h2 {
-            font-size: 18px;
-          }
-          p {
-            font-size: 15px;
-          }
-        }
-      }
-      .right-side-wycd {
-        overflow: hidden;
-        height: 400px;
-        .wycd-img-container {
-          padding: 10px !important;
-          right: 50px;
-          bottom: -30px;
-          /* height: 100%; */
-        }
-      }
     }
   }
   .what-to-share {
@@ -570,6 +557,23 @@ footer {
           }
           p {
             font-size: 16px;
+          }
+        }
+        .right-side-wycd {
+          .gif-bg {
+            height: 380px;
+            width: 180px;
+            margin: auto;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+            border-radius: 50px;
+            .gif-container img {
+              width: 165px;
+              height: 340px;
+              margin: auto;
+            }
           }
         }
       }
@@ -653,8 +657,37 @@ footer {
       }
     }
   }
+  .wycd-container {
+    .left-side-wycd {
+      div {
+        gap: 10px;
+        h2 {
+          font-size: 18px;
+        }
+        p {
+          font-size: 15px;
+        }
+      }
+    }
+    .right-side-wycd {
+      overflow: hidden;
+      height: 450px;
+
+      .wycd-img-container {
+        padding: 10px !important;
+        #wycd-absolute {
+          top: 50px;
+          left: 70px;
+          width: 90%;
+          img {
+            width: 65%;
+          }
+        }
+      }
+    }
+  }
 }
-@media screen and (max-width: 375px) {
+@media screen and (max-width: 376px) {
   header {
     .nav {
       padding: 5px 5px;
@@ -709,12 +742,60 @@ footer {
   .campaign {
     .container {
       .relative {
-        height: 400px !important;
+        div {
+          top: 0px !important;
+        }
+        height: 450px !important;
+      }
+    }
+  }
+  footer {
+    .main-footer-container {
+      .bottom-footer-part {
+        .left-bottom-side {
+          display: flex;
+          flex-wrap: wrap;
+          justify-content: center; /* Center the items */
+          gap: 10px; /* Optional: Add some space between the items */
+          font-size: 16px;
+        }
+
+        .left-bottom-side a {
+          flex: 0 1 45%; /* Make each item take up 45% of the row's width */
+          text-align: center; /* Center align the text */
+        }
+
+        .left-bottom-side a:nth-child(3) {
+          flex-basis: 100%; /* Make the third item take up the full width */
+          justify-content: center; /* Center the third item */
+        }
+      }
+    }
+  }
+  .what-you-can-do {
+    .container {
+      h1 {
+        font-size: 21px;
+      }
+      .wycd-container {
+        .right-side-wycd {
+          .wycd-img-container {
+            height: 400px;
+            #wycd-absolute {
+              left: 50px !important;
+              top: 0;
+              width: 90%;
+              img {
+                width: 80%;
+              }
+            }
+          }
+        }
       }
     }
   }
 }
-@media screen and (max-width: 320px) {
+@media screen and (max-width: 321px) {
   .right-side-nav {
     select {
       padding-right: 25px;
@@ -732,6 +813,20 @@ footer {
           }
           p {
             font-size: 14px;
+          }
+        }
+        .right-side-wycd {
+          height: 350px;
+          .wycd-img-container {
+            #wycd-absolute {
+              left: 40px !important;
+              top: 50px;
+              width: 90%;
+
+              img {
+                width: 80%;
+              }
+            }
           }
         }
       }
@@ -765,6 +860,7 @@ footer {
       }
     }
   }
+
   footer {
     .main-footer-container {
       .top-footer-part {
@@ -787,7 +883,7 @@ footer {
         gap: 20px;
         .left-bottom-side {
           gap: 5px;
-          font-size: 12px;
+          font-size: 13px;
         }
         .right-bottom-side {
           text-align: center;

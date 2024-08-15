@@ -1,8 +1,11 @@
-import { useState, useEffect } from 'react';
-import Gif from '../../../assets/gif-verbyo.gif';
+import { useEffect, useState, useRef } from 'react';
+import FirstImage from '../../../assets/One8.jpg';
+import SecondImage from '../../../assets/One9.jpg';
+import ThirdImage from '../../../assets/One10.jpg';
 import MobileTop from '../../../assets/Subtract.png';
 import playButton from '../../../assets/play-button.png';
 import PropTypes from 'prop-types';
+import AOS from 'aos';
 
 const useDeviceType = () => {
   const [deviceType, setDeviceType] = useState('desktop');
@@ -27,12 +30,89 @@ const useDeviceType = () => {
 
   return deviceType;
 };
+
 const HowAppWorks = ({ openModal }) => {
   const [activeDiv, setActiveDiv] = useState('div1');
+  const [image, setImage] = useState(FirstImage);
+  const [isVisible, setIsVisible] = useState(false);
+  const sectionRef = useRef(null);
   const deviceType = useDeviceType();
+
+  useEffect(() => {
+    AOS.init({
+      duration: 1000,
+      once: true,
+    });
+
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        setIsVisible(entry.isIntersecting);
+      },
+      { threshold: 0.1 }
+    );
+
+    if (sectionRef.current) {
+      observer.observe(sectionRef.current);
+    }
+
+    return () => {
+      if (sectionRef.current) {
+        observer.unobserve(sectionRef.current);
+      }
+    };
+  }, []);
+
+  useEffect(() => {
+    if (isVisible) {
+      const handleScroll = () => {
+        const scrollY = window.scrollY;
+        const sectionTop = sectionRef.current?.offsetTop || 0;
+        const sectionHeight = sectionRef.current?.offsetHeight || 0;
+
+        let triggerPoint1, triggerPoint2, triggerPoint3;
+
+        if (deviceType === 'mobile') {
+          // Mobile
+          triggerPoint1 = sectionTop + sectionHeight / 2 - 300;
+          triggerPoint2 = sectionTop + sectionHeight / 2 - 200;
+          triggerPoint3 = sectionTop + sectionHeight / 2 - 100;
+        } else if (deviceType === 'tablet') {
+          // Tablet
+          triggerPoint1 = sectionTop + sectionHeight / 2 - 750;
+          triggerPoint2 = sectionTop + sectionHeight / 2 - 550;
+          triggerPoint3 = sectionTop + sectionHeight / 2 - 450;
+        } else {
+          // Desktop
+          triggerPoint1 = sectionTop + sectionHeight / 2 - 700;
+          triggerPoint2 = sectionTop + sectionHeight / 2 - 500;
+          triggerPoint3 = sectionTop + sectionHeight / 2 - 300;
+        }
+
+        if (scrollY >= triggerPoint3) {
+          setActiveDiv('div3');
+          setImage(ThirdImage);
+        } else if (scrollY >= triggerPoint2) {
+          setActiveDiv('div2');
+          setImage(SecondImage);
+        } else if (scrollY >= triggerPoint1) {
+          setActiveDiv('div1');
+          setImage(FirstImage);
+        }
+      };
+
+      window.addEventListener('scroll', handleScroll);
+
+      return () => {
+        window.removeEventListener('scroll', handleScroll);
+      };
+    }
+  }, [isVisible, sectionRef, deviceType]);
 
   const handleDivClick = (divId) => {
     setActiveDiv(divId);
+    if (divId === 'div1') setImage(FirstImage);
+    else if (divId === 'div2') setImage(SecondImage);
+    else setImage(ThirdImage);
   };
 
   return (
@@ -60,7 +140,7 @@ const HowAppWorks = ({ openModal }) => {
                     <div className="gif-bg">
                       <div className="gif-container">
                         <img
-                          src={Gif}
+                          src={image}
                           alt=""
                           className="rounded-3xl"
                         />
@@ -76,7 +156,7 @@ const HowAppWorks = ({ openModal }) => {
                 </div>
                 <div className="left-side-wycd flex flex-col gap-7 w-1/2">
                   <div
-                    onClick={() => handleDivClick('div1')}
+                    onMouseEnter={() => handleDivClick('div1')}
                     className={`transition duration-300 rounded-lg p-3 flex cursor-pointer flex-col gap-2 ${
                       activeDiv === 'div1'
                         ? 'bg-blue-100'
@@ -92,7 +172,7 @@ const HowAppWorks = ({ openModal }) => {
                     </p>
                   </div>
                   <div
-                    onClick={() => handleDivClick('div2')}
+                    onMouseEnter={() => handleDivClick('div2')}
                     className={`transition duration-300 rounded-lg p-3 cursor-pointer flex flex-col gap-2 ${
                       activeDiv === 'div2'
                         ? 'bg-blue-100'
@@ -108,7 +188,7 @@ const HowAppWorks = ({ openModal }) => {
                     </p>
                   </div>
                   <div
-                    onClick={() => handleDivClick('div3')}
+                    onMouseEnter={() => handleDivClick('div3')}
                     className={`transition duration-300 rounded-lg p-3 cursor-pointer flex flex-col gap-2 ${
                       activeDiv === 'div3'
                         ? 'bg-blue-100'
@@ -143,7 +223,10 @@ const HowAppWorks = ({ openModal }) => {
           </section>
         </>
       ) : (
-        <section className="how-app-works overflow-hidden pt-10 w-full">
+        <section
+          className="how-app-works overflow-hidden pt-10 w-full"
+          ref={sectionRef}
+        >
           <div className="container py-10 m-auto bg-custom-bg rounded-lg">
             <div className="wycd-container px-10 py-16 flex justify-around items-center">
               <div className="left-side-wycd flex flex-col gap-7 w-1/2">
@@ -157,7 +240,7 @@ const HowAppWorks = ({ openModal }) => {
                   </p>
                 </div>
                 <div
-                  onClick={() => handleDivClick('div1')}
+                  onMouseEnter={() => handleDivClick('div1')}
                   className={`transition duration-300 rounded-lg p-5 flex cursor-pointer flex-col gap-5 ${
                     activeDiv === 'div1'
                       ? 'bg-blue-100'
@@ -173,7 +256,7 @@ const HowAppWorks = ({ openModal }) => {
                   </p>
                 </div>
                 <div
-                  onClick={() => handleDivClick('div2')}
+                  onMouseEnter={() => handleDivClick('div2')}
                   className={`transition duration-300 rounded-lg p-5 cursor-pointer flex flex-col gap-5 ${
                     activeDiv === 'div2'
                       ? 'bg-blue-100'
@@ -189,7 +272,7 @@ const HowAppWorks = ({ openModal }) => {
                   </p>
                 </div>
                 <div
-                  onClick={() => handleDivClick('div3')}
+                  onMouseEnter={() => handleDivClick('div3')}
                   className={`transition duration-300 rounded-lg p-5 cursor-pointer flex flex-col gap-5 ${
                     activeDiv === 'div3'
                       ? 'bg-blue-100'
@@ -207,14 +290,18 @@ const HowAppWorks = ({ openModal }) => {
                 </div>
               </div>
               <div
-                className="right-side-wycd  bg-custom-bg w-2/5 flex justify-center items-center rounded-xl"
+                className="right-side-wycd overflow-hidden relative bg-white w-2/5 flex justify-center items-center rounded-xl"
                 data-aos="fade"
                 data-aos-duration="1000"
               >
                 <div className="haw-video-container relative p-10">
                   <div className="gif-bg">
                     <div className="gif-container">
-                      <img src={Gif} alt="" className="rounded-3xl" />
+                      <img
+                        src={image}
+                        alt=""
+                        className="rounded-3xl"
+                      />
                     </div>
                     <div className="absolute top-6">
                       <img
@@ -245,6 +332,7 @@ const HowAppWorks = ({ openModal }) => {
     </>
   );
 };
+
 HowAppWorks.propTypes = {
   openModal: PropTypes.func.isRequired,
 };

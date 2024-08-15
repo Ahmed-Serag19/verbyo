@@ -1,36 +1,35 @@
-import Post from './Post';
-import ProductImages from '../../../assets/W-T-S-1.png';
-import VolunteerImage from '../../../assets/W-T-S-2.png';
-import EducationalImage from '../../../assets/W-T-S-3.png';
-import LandmarkImage from '../../../assets/W-T-S-4.png';
-import EntertainmentImages from '../../../assets/W-T-S-5.png';
-import CommunityImage from '../../../assets/W-T-S-6.png';
-import { useState, useEffect } from 'react';
-import { Swiper, SwiperSlide } from 'swiper/react';
-import { Navigation, Pagination, Autoplay } from 'swiper/modules';
-import 'swiper/css';
-import 'swiper/css/navigation';
-import 'swiper/css/pagination';
+import Post from "./Post";
+import ProductImages from "../../../assets/W-T-S-1.png";
+import VolunteerImage from "../../../assets/W-T-S-2.png";
+import EducationalImage from "../../../assets/W-T-S-3.png";
+import LandmarkImage from "../../../assets/W-T-S-4.png";
+import EntertainmentImages from "../../../assets/W-T-S-5.png";
+import CommunityImage from "../../../assets/W-T-S-6.png";
+import { useState, useEffect } from "react";
+import { Swiper, SwiperSlide } from "swiper/react";
+import { Navigation, Pagination, Autoplay } from "swiper/modules";
+import "swiper/css";
+import "swiper/css/navigation";
+import "swiper/css/pagination";
 
 const useDeviceType = () => {
-  const [deviceType, setDeviceType] = useState('desktop');
+  const [deviceType, setDeviceType] = useState("desktop");
 
   const updateDeviceType = () => {
     const width = window.innerWidth;
     if (width <= 480) {
-      setDeviceType('mobile');
+      setDeviceType("mobile");
     } else if (width <= 768) {
-      setDeviceType('tablet');
+      setDeviceType("tablet");
     } else {
-      setDeviceType('desktop');
+      setDeviceType("desktop");
     }
   };
 
   useEffect(() => {
     updateDeviceType();
-    window.addEventListener('resize', updateDeviceType);
-    return () =>
-      window.removeEventListener('resize', updateDeviceType);
+    window.addEventListener("resize", updateDeviceType);
+    return () => window.removeEventListener("resize", updateDeviceType);
   }, []);
 
   return deviceType;
@@ -41,7 +40,7 @@ const Posts = () => {
 
   return (
     <>
-      {deviceType === 'mobile' ? (
+      {deviceType === "mobile" ? (
         <Swiper
           modules={[Navigation, Pagination, Autoplay]}
           spaceBetween={0}
@@ -65,13 +64,13 @@ const Posts = () => {
               body="Advertise and showcase various services and products to your audience."
             />
           </SwiperSlide>
-          <SwiperSlide className="flex justify-center items-center">
+          {/* <SwiperSlide className="flex justify-center items-center">
             <Post
               image={VolunteerImage}
               title="Amplify Social Causes and Volunteering"
               body="Raise awareness for social causes and volunteer opportunities by sharing impactful stories and initiatives from foundations."
             />
-          </SwiperSlide>
+          </SwiperSlide> */}
           <SwiperSlide className="flex justify-center items-center">
             <Post
               image={EducationalImage}

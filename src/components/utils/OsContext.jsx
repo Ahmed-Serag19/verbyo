@@ -1,4 +1,3 @@
-// src/contexts/OSContext.js
 import {
   createContext,
   useState,
@@ -37,14 +36,12 @@ export const OSProvider = ({ children }) => {
       operatingSystem === 'ios' ||
       operatingSystem === 'mobile'
     ) {
-      console.log('IOS');
       url = 'https://apps.apple.com/us/app/verbyo/id1556056038';
     } else {
       url =
         'https://play.google.com/store/apps/details?id=com.verbyo';
     }
 
-    console.log('Redirecting to:', url);
     window.location.href = url;
   };
 
